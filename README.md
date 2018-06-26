@@ -43,27 +43,27 @@ You need to install these locally to run IBM DSX desktop projects.
 1. [Apache Spark](https://spark.apache.org/downloads.html)
 2. [Python 2.7 and higher](https://www.python.org/downloads/) 
 3. [Anaconda](https://www.anaconda.com/download/)
-4. [Docker]()
+4. [Docker](https://docs.docker.com/install/)
 
 # Steps
 
 Follow these steps to setup and run this Code Pattern. The steps are
 described in detail below.
 
-1. [Download and Install IBM Data Science Experience desktop](#1-download-and-install-ibm-data-science-experince-desktop)
-2. [Create a Project](#2-create-a-project)
+1. [Download and install IBM Data Science Experience Desktop](#1-download-and-install-ibm-data-science-experience-desktop)
+2. [Create a project](#2-create-a-project)
 3. [Create the notebook](#3-create-the-notebook)
 4. [Run the notebook](#4-run-the-notebook)
 5. [Analyze the results](#5-analyze-the-results)
-6. [Save and Share](#6-save-and-share)
+6. [Save and share](#6-save-and-share)
 
-## 1. Download and Install IBM Data Science Experience desktop
+## 1. Download and Install IBM Data Science Experience Desktop
 
 Sign up for IBM's [Cloud](https://www.ibm.com/cloud/). You can use the same login to download [IBM DSX Desktop](https://www.ibm.com/products/data-science-experience).
 
-Once you download and launch the installer, you will be asked to choose between different packages to install for Jupyter Notebook and optional RStudio. You can follow these [installation instuctions](https://content-dsxdesktop.mybluemix.net/) for IBM DSX Desktop.
+Once you download and launch the installer, you will be asked to choose between different packages to install for Jupyter Notebook and optional RStudio. You can follow these [installation instructions](https://content-dsxdesktop.mybluemix.net/) for IBM DSX Desktop.
 
-## 2. Create a Project
+## 2. Create a project
 
 When the installation is done, the app launches and you will see sample projects and notebooks which you can start testing the app with. 
 
@@ -110,7 +110,7 @@ There are several ways to execute the code cells in your notebook:
     continue executing all cells that follow.
 
 
-## 5. Analyze the Results
+## 5. Analyze the results
 
 After running each cell of the notebook, the results will display. When we use PixieDust ``display()`` to create an interactive dataset, we are able to change the visualization using tables, graphs, and charts.
 
@@ -297,24 +297,17 @@ There is a sample of the output in [doc/source/example-output.html](doc/source/e
 
 # Troubleshooting
 
-* You can see all the processes in docker by running the command in termianl: `docker ps`
+* You can see all the processes in docker by running the command in terminal: `docker ps`
 ![](doc/source/images/docker-ps.png)
 * In order to view logs on your notebook you can select the container id of the notebook and run : `docker logs <container id>`
 ![](doc/source/images/docker-logs-container.png)
 * You might have to upgrade `tornado` by running `pip install --upgrade tornado`
 * If after uploading the notebook, the DSX desktop shows you loading icon for long do the following steps:
-
-
-```
-
-* Close IBM DSX desktop
-* Kill all the processes: docker rm -f $(docker ps -aq)
-* cd ~/Library/Application \Support/ and rm -rf ibm-dsx-desktop
-* restart DSX Desktop
-* load the jupyter notebook again
-
-
-```
+ * Close IBM DSX desktop
+ * Kill all the processes related to DSX Local from terminal: `docker ps |grep dsx` and `docker rm -f <container id>`
+ * `cd ~/Library/Application \Support/` and `rm -rf ibm-dsx-desktop`
+ * restart DSX Desktop
+ * load the jupyter notebook again
 * You can view all the docker images used by the app using: `docker images`
 * All the logs can be found in location: `~/Library/Application \Support/Logs/`
 
