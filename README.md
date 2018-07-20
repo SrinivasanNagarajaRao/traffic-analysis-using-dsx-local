@@ -1,5 +1,5 @@
 # Traffic Analysis using IBM Data Science Local and PixieDust
-> This code pattern was tested using [DSX Desktop](https://www.ibm.com/products/data-science-experience), a lightweight version of DSX Local intended for standalone use and optimized for local development. For production deployments it is recommended to use DSX Local with a three node configuration, for information on how to do that, see the [DSX Install Docs](https://content-dsxlocal.mybluemix.net/docs/content/local/welcome.html).
+> This code pattern was also tested using [DSX Desktop](https://www.ibm.com/products/data-science-experience), a lightweight version of DSX Local intended for standalone use and optimized for local development. For production deployments it is recommended to use DSX Local with a three node configuration, for information on how to do that, see the [DSX Install Docs](https://content-dsxlocal.mybluemix.net/docs/content/local/welcome.html).
 
 In this Code Pattern we will use PixieDust running on IBM Data Science Experience (DSX) Local to analyze traffic data from the City of San Francisco. IBM Data Science Experience (DSX) Local is a free client for data scientists and data engineers which provides tools (Juyter, Notebooks, RStudio, Spark, etc.) to analyze and gather insight from their data. 
 
@@ -7,7 +7,7 @@ When the reader has completed this Code Pattern, they will understand how to:
 
 * Install [IBM Data Science Experience Local](https://content-dsxlocal.mybluemix.net/docs/content/local/overview.html)
 * Use [Jupyter Notebooks](http://jupyter.org/) to load, visualize, and analyze data
-* Run Notebooks in [IBM DSX Desktop](https://dataplatform.ibm.com/)
+* Run Notebooks in [IBM DSX Local](https://dataplatform.ibm.com/)
 * Leverage [PixieDust](https://github.com/ibm-cds-labs/pixiedust) as a python notebook helper
 * Build a dashboard using [PixieApps](https://ibm-watson-data-lab.github.io/pixiedust/pixieapps.html)
 * Fetch data from [City of San Francisco Open Data](https://datasf.org/opendata/)
@@ -38,7 +38,7 @@ The intended audience for this Code Pattern is application developers and other 
 
 # Pre-requisites
 
-You need to install these locally to run IBM DSX desktop projects.
+You need atleast a 3 node cluster with DSX Local installed along with:
 
 1. [Apache Spark](https://spark.apache.org/downloads.html)
 2. [Python 2.7 and higher](https://www.python.org/downloads/) 
@@ -50,37 +50,37 @@ You need to install these locally to run IBM DSX desktop projects.
 Follow these steps to setup and run this Code Pattern. The steps are
 described in detail below.
 
-1. [Download and install IBM Data Science Experience Desktop](#1-download-and-install-ibm-data-science-experience-desktop)
+1. [Download and install IBM Data Science Experience Local](#1-download-and-install-ibm-data-science-experience-desktop)
 2. [Create a project](#2-create-a-project)
 3. [Create the notebook](#3-create-the-notebook)
 4. [Run the notebook](#4-run-the-notebook)
 5. [Analyze the results](#5-analyze-the-results)
 6. [Save and share](#6-save-and-share)
 
-## 1. Download and Install IBM Data Science Experience Desktop
+## 1. Download and Install IBM Data Science Experience Local
 
 Sign up for IBM's [Cloud](https://www.ibm.com/cloud/). You can use the same login to download [IBM DSX Desktop](https://www.ibm.com/products/data-science-experience).
 
-Once you download and launch the installer, you will be asked to choose between different packages to install for Jupyter Notebook and optional RStudio. You can follow these [installation instructions](https://content-dsxdesktop.mybluemix.net/) for IBM DSX Desktop.
+Once have the cluster ready you can follow these [installation instructions](https://content-dsxlocal.mybluemix.net/docs/content/local/installandsetup.html) for IBM DSX Local.
 
 ## 2. Create a project
 
 When the installation is done, the app launches and you will see sample projects and notebooks which you can start testing the app with. 
 
 * Create a new Project by clicking the `+ new Project`.
-![](doc/source/images/ibm-dsx-create-project.png)
+![](doc/source/images/create-new-project.png)
 
 * Add project name and description, and click `Create` button to complete project creation.
-![](doc/source/images/ibm-dsx-create-project-1.png) 
+![](doc/source/images/create-new-project-1.png) 
 
 ## 3. Create the notebook
 
-* After you create the project in IBM DSX Desktop, create a notebook by clicking the `+` from the top right and selecting `create notebook` option.
+* After you create the project in IBM DSX Local, create a notebook by clicking the `+` from the top right and selecting `create notebook` option.
 
-![](doc/source/images/ibm-dsx-create-notebook.png)
+![](doc/source/images/create-notebook.png)
 
 * Select the `From File` tab.
-![](doc/source/images/ibm-dsx-create-notebook-1.png)
+![](doc/source/images/create-notebook-1.png)
 
 * Enter a name for the notebook.
 * Optionally, enter a description for the notebook.
@@ -118,11 +118,11 @@ After running each cell of the notebook, the results will display. When we use P
 
 After running cell #3 `display(incidents)`, we can see by clicking the `Options` button that we are able to manipulate the keys and values for the fields used in the chart:
 
-![](doc/source/images/pixieDustChartOptions.png)
+![](doc/source/images/chart-options.png)
 
 Following the instructions, we use PdDistrict and IncidntNum, but the user can change the keys and value to see how the chart will look with different inputs. Output of this chart options is shown below:
 
-![](doc/source/images/pixieDustChartOptionsOutput.png)
+![](doc/source/images/pie-chart.png)
 
 ### Use Spark SQL to query data
 
@@ -135,18 +135,18 @@ mission = sqlContext.sql("SELECT * FROM incidents WHERE PdDistrict='MISSION'")
 
 We then get an interactive map of the Mission district using command `dispaly(mission)`. You can also change options as you need using the `options` button.
 
-![](doc/source/images/missionDistrictSQLResults.png)
+![](doc/source/images/mapbox-render.png)
 
 > Note: The notebook uses mapBox to render map of San Fransisco. There are options to choose if you prefer google maps. In order to render the map make sure to get the `API_KEY` or `Access Token` from respective provider. The place to put the `API_KEY` or `Access Token` is by clicking ``options`` button.
 
-![](doc/source/images/mapbox-access-token.png)
+![](doc/source/images/mapbox-config.png)
 
 
 ### Create a PixieApp Dashboard
 
 With PixieApps, we can create a dashboard with map layers that can be used to visualize various datasets (i.e. Traffic Calming, Police Districts, and Crimes):
 
-![](doc/source/images/pixieAppsLayers.png)
+![](doc/source/images/mapbox-incident.png)
 
 #### Create the skeleton
 
@@ -197,7 +197,7 @@ The best way to generate the ``pd_options`` for a PixieDust visualization is to:
 3.  Select ``View/Cell Toobar/Edit metadata`` menu
 4.  Click on the ``Edit Metadata`` button and copy the PixieDust metadata
 
-![](doc/source/images/pdEditMetadata.png)
+![](doc/source/images/edit-metadata.png)
 
 To conform to the ``pd_options`` notation, we need to transform the PixieDust JSON metadata into an attribute string with the following format: ```“key1=value1;key2=value2;…”```
 
@@ -297,12 +297,20 @@ There is a sample of the output in [doc/source/example-output.html](doc/source/e
 
 # Troubleshooting
 
+## Troubleshooting for DSX local
+
+* If the cluster doesn't have any open connection you might need to upload the data set into the cluster using `Add Dataset` from the projects page. And you can use `Find Data` to upload the data and `import spark dataframe in python` which will create the code for you and add it to the selected cell in the notebook.
+
+![](doc/source/images/uploading-dataset.png)
+
+## Troubleshooting for DSX desktop
+
 * You can see all the processes in docker by running the command in terminal: `docker ps`
 ![](doc/source/images/docker-ps.png)
 * In order to view logs on your notebook you can select the container id of the notebook and run : `docker logs <container id>`
 ![](doc/source/images/docker-logs-container.png)
 * You might have to upgrade `tornado` by running `pip install --upgrade tornado`
-* If after uploading the notebook, the DSX desktop shows you loading icon for long do the following steps:
+* If after uploading the notebook, the DSX Desktop shows you loading icon for long do the following steps:
  * Close IBM DSX desktop
  * Kill all the processes related to DSX Local from terminal: `docker ps |grep dsx` and `docker rm -f <container id>`
  * `cd ~/Library/Application \Support/` and `rm -rf ibm-dsx-desktop`
@@ -310,6 +318,7 @@ There is a sample of the output in [doc/source/example-output.html](doc/source/e
  * load the jupyter notebook again
 * You can view all the docker images used by the app using: `docker images`
 * All the logs can be found in location: `~/Library/Application \Support/Logs/`
+
 
 # Links
 
