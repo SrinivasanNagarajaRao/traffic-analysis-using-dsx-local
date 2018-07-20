@@ -76,12 +76,9 @@ When the installation is done, the app launches and you will see sample projects
 ## 3. Create the notebook
 
 * After you create the project in IBM DSX Local, create a notebook by clicking the `+` from the top right and selecting `create notebook` option.
-
 ![](doc/source/images/create-notebook.png)
-
 * Select the `From File` tab.
 ![](doc/source/images/create-notebook-1.png)
-
 * Enter a name for the notebook.
 * Optionally, enter a description for the notebook.
 * Choose the following notebook part of the repostory:  [SF-Traffic-Analysis.ipynb](notebooks/SF-Traffic-Analysis.ipynb).
