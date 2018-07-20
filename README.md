@@ -1,11 +1,11 @@
-# Traffic Analysis using IBM Data Science Desktop and PixieDust
+# Traffic Analysis using IBM Data Science Local and PixieDust
 > This code pattern was tested using [DSX Desktop](https://www.ibm.com/products/data-science-experience), a lightweight version of DSX Local intended for standalone use and optimized for local development. For production deployments it is recommended to use DSX Local with a three node configuration, for information on how to do that, see the [DSX Install Docs](https://content-dsxlocal.mybluemix.net/docs/content/local/welcome.html).
 
-In this Code Pattern we will use PixieDust running on IBM Data Science Experience (DSX) Desktop to analyze traffic data from the City of San Francisco. IBM Data Science Experience (DSX) Desktop is a free client for data scientists and data engineers which provides tools (Juyter, Notebooks, RStudio, Spark, etc.) to analyze and gather insight from their data. 
+In this Code Pattern we will use PixieDust running on IBM Data Science Experience (DSX) Local to analyze traffic data from the City of San Francisco. IBM Data Science Experience (DSX) Local is a free client for data scientists and data engineers which provides tools (Juyter, Notebooks, RStudio, Spark, etc.) to analyze and gather insight from their data. 
 
 When the reader has completed this Code Pattern, they will understand how to:
 
-* Install [IBM Data Science Experience Desktop](https://content-dsxdesktop.mybluemix.net/docs/content/desktop/overview.html)
+* Install [IBM Data Science Experience Local](https://content-dsxlocal.mybluemix.net/docs/content/local/overview.html)
 * Use [Jupyter Notebooks](http://jupyter.org/) to load, visualize, and analyze data
 * Run Notebooks in [IBM DSX Desktop](https://dataplatform.ibm.com/)
 * Leverage [PixieDust](https://github.com/ibm-cds-labs/pixiedust) as a python notebook helper
@@ -19,7 +19,7 @@ The intended audience for this Code Pattern is application developers and other 
 
 # Flow
 
-1. Load the provided notebook into the IBM Data Science Experience (DSX) Desktop.
+1. Load the provided notebook into the IBM Data Science Experience (DSX) Local.
 2. [DataSF Open Data](https://datasf.org/opendata/) traffic info is loaded into the Jupyter Notebook.
 3. The notebook analyzes the traffic information.
 4. PixieDust is imported into the notebook for fast, flexible, and easier data analysis and experimentation
