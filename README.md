@@ -290,7 +290,7 @@ You can publish your notebook by selecting the cloud icon button located in the 
 
 # Sample Output
 
-There is a sample of the output in [doc/source/example-output.html](doc/source/example-output.html)
+The sample output is viewed using Jupyter nbviewer. [Sample Output](https://nbviewer.jupyter.org/github/IBM/traffic-analysis-using-dsx-local/blob/sanjeevghimire-patch-1/notebooks/SF_Traffic_Analysis_notebook_with_output.jupyter.ipynb)
 
 # Troubleshooting
 
