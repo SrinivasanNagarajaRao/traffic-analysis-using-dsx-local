@@ -38,7 +38,7 @@ The intended audience for this Code Pattern is application developers and other 
 
 # Pre-requisites
 
-You need atleast a 3 node cluster with DSX Local installed along with:
+You need at least a 3 node cluster with DSX Local installed along with:
 
 1. [Apache Spark](https://spark.apache.org/downloads.html)
 2. [Python 2.7 and higher](https://www.python.org/downloads/) 
@@ -61,7 +61,7 @@ described in detail below.
 
 Sign up for IBM's [Cloud](https://www.ibm.com/cloud/). You can use the same login to download [IBM DSX Desktop](https://www.ibm.com/products/data-science-experience).
 
-Once have the cluster ready you can follow these [installation instructions](https://content-dsxlocal.mybluemix.net/docs/content/local/installandsetup.html) for IBM DSX Local.
+Once you have the cluster ready, you can follow these [installation instructions](https://content-dsxlocal.mybluemix.net/docs/content/local/installandsetup.html) for IBM DSX Local.
 
 ## 2. Create a project
 
