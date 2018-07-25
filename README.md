@@ -134,7 +134,7 @@ We then get an interactive map of the Mission district using command `dispaly(mi
 
 ![](doc/source/images/mapbox-render.png)
 
-> Note: The notebook uses mapBox to render map of San Fransisco. There are options to choose if you prefer google maps. In order to render the map make sure to get the `API_KEY` or `Access Token` from respective provider. The place to put the `API_KEY` or `Access Token` is by clicking ``options`` button.
+> Note: The notebook uses Mapbox to render map of San Fransisco. In order to render the map make sure to get the `API_KEY` or `Access Token` from Mapbox. The place to put the `API_KEY` or `Access Token` is by clicking ``options`` button.
 
 ![](doc/source/images/mapbox-config.png)
 
