@@ -27,7 +27,7 @@ The intended audience for this Code Pattern is application developers and other 
 
 # Included Components
 
-* [IBM Data Science Experience Desktop](https://www.ibm.com/us-en/marketplace/data-science-experience): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
+* [IBM Data Science Experience Local](https://www.ibm.com/us-en/marketplace/data-science-experience): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
 
 ## Featured technologies
 
@@ -50,16 +50,14 @@ You need at least a 3 node cluster with DSX Local installed along with:
 Follow these steps to setup and run this Code Pattern. The steps are
 described in detail below.
 
-1. [Download and install IBM Data Science Experience Local](#1-download-and-install-ibm-data-science-experience-desktop)
+1. [Login to Data Science Experience Local Cluster](#1-login-to-data-science-experience-local-cluster)
 2. [Create a project](#2-create-a-project)
 3. [Create the notebook](#3-create-the-notebook)
 4. [Run the notebook](#4-run-the-notebook)
 5. [Analyze the results](#5-analyze-the-results)
 6. [Save and share](#6-save-and-share)
 
-## 1. Download and Install IBM Data Science Experience Local
-
-Sign up for IBM's [Cloud](https://www.ibm.com/cloud/). You can use the same login to download [IBM DSX Desktop](https://www.ibm.com/products/data-science-experience).
+## 1. Login to Data Science Experience Local Cluster
 
 Once you have the cluster ready, you can follow these [installation instructions](https://content-dsxlocal.mybluemix.net/docs/content/local/installandsetup.html) for IBM DSX Local.
 
